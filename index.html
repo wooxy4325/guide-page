@@ -3,103 +3,34 @@
 <head>
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Отключение режима сна в беспроводных наушниках</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #ffffff;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .container {
-            margin: 20px auto;
-            max-width: 1300px;
-            background-color: rgb(255, 255, 255);
-            padding: 10px 30px;
-            border-radius: 10px;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
-            line-height: 45px;
-            word-spacing: normal;
-        }
-
-        /* Large desktops and laptops */
-        @media (max-width: 1050px) {
-            h1 {
-                font-size: 24.61px;
-            }
-
-            h2 {
-                font-size: 18.46px;
-            }
-
-            p {
-                font-size: 12.30px;
-            }
-
-            ul li {
-                font-size: 12.30px;
-            }
-
-            code {
-                font-size: 12.30px;
-            }
-        }
-
-        /* Portrait tablets and medium desktops */
-        @media (max-width: 830px) {
-            h1 {
-                font-size: 22.28px;
-            }
-
-            h2 {
-                font-size: 17.14px;
-            }
-
-            p {
-                font-size: 11.42px;
-            }
-
-            ul li {
-                font-size: 11.42px;
-            }
-
-            code {
-                font-size: 11.42px;
-            }
-        }
-
-        h2 {
-            color: #555;
-        }
-
-        p {
-            color: #666;
-        }
-
-        code {
-            font-family: "Courier New", monospace;
-            background-color: #f5f5f5;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-
-        pre {
-            background-color: #f5f5f5;
-            padding: 10px;
-            overflow-x: auto;
-        }
-
-        pre code {
-            display: block;
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
+    <title>Как отключить режим сна в беспроводных наушниках</title>
+    <!-- Мета-теги для SEO -->
+    <meta content="Узнайте, как отключить режим сна на наушниках с нашим подробным гайдом. Полезные советы и инструкции для различных моделей наушников."
+          name="description">
+    <meta content="как отключить спящий режим в наушниках, отключение режима сна в наушниках, гайд, советы, инструкции, cпящий режим в наушниках"
+          name="keywords">
+    <meta content="Святослав Екимов" name="author">
+    <meta content="Если вам понравился мой гайд, вы можете поддержать меня добровольным пожертвованием на карту Тинькофф: 5536 9141 2785 3020. Благодарю за вашу поддержку!"
+          name="donation">
+    <!-- Мета-теги для социальных сетей -->
+    <meta content="Гайд: Как отключить режим сна на наушниках" property="og:title">
+    <meta content="Узнайте, как отключить режим сна на наушниках с нашим подробным гайдом. Полезные советы и инструкции для различных моделей наушников."
+          property="og:description">
+    <meta content="ссылка на изображение, представляющее контент" property="og:image">
+    <!-- Мета-теги для тега canonical, указывающие на основной адрес страницы -->
+    <link href="ссылка на основную страницу" rel="canonical">
+    <!-- Теги для определения языка и региона -->
+    <link href="ссылка на версию страницы на русском языке" hreflang="ru" rel="alternate">
+    <!-- Теги для карты сайта (если есть) -->
+    <link href="ссылка на карту сайта" rel="sitemap" title="Sitemap" type="application/xml">
+    <!-- Теги для указания индексации и последнего обновления страницы -->
+    <meta content="index, follow" name="robots">
+    <meta content="7 days" name="revisit-after">
+    <!-- Ссылки на стили, скрипты и другие ресурсы -->
+    <script defer src="скрипты.js"></script>
 </head>
+
 <body>
 <div class="container">
     <h1>
@@ -175,11 +106,17 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName $taskName -Us
     </p>
 
     <p>
+        Перезагружаем компьютер и наслаждаемся непрерывной работой наушников!
+    </p>
+
+    <p>
         <em>Примечание:</em> Если вашим наушникам требуется другое время для
         перехода в режим сна, отредактируйте файл
-        <code>C:\Windows\script.ps1</code>, изменяя значение
+        <code>C:\Windows\script.ps1</code>, с помощью блокнота, изменяя значение
         <code>Start-Sleep -Seconds 850</code> на нужное количество секунд.
     </p>
+    <h2 class="donate">Если вам понравился мой гайд, вы можете поддержать меня добровольным пожертвованием на карту <br>
+        <span>Тинькофф: 5536 9141 2785 3020</span>. Благодарю за вашу поддержку!</h2>
 </div>
 </body>
 </html>
