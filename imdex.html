@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Отключение режима сна в беспроводных наушниках</title>
+    <style>
+              body {
+                  font-family: Arial, sans-serif;
+                  line-height: 1.6;
+                  background-color: #ffffff;
+                  padding: 0;
+                  box-sizing: border-box;
+              }
+
+              .container{
+                  margin: 20px auto;
+                  max-width: 1300px;
+                  background-color: rgb(255, 255, 255);
+                  padding:10px 30px;
+                  border-radius: 10px;
+              }
+
+              h1 {
+                  color: #333;
+                  margin-bottom: 30px;
+                  line-height: 45px;
+                  word-spacing: normal;
+              }
+
+   /* Large desktops and laptops */
+   @media (max-width: 1050px) {
+h1{
+font-size: 24.61px;
+}
+h2{
+font-size: 18.46px;
+}
+p{
+font-size: 12.30px;
+}
+ul li{
+    font-size: 12.30px;
+}
+code{
+    font-size: 12.30px;
+}
+}
+
+/* Portrait tablets and medium desktops */
+@media (max-width: 830px) {
+h1{
+font-size: 22.28px;
+}
+h2{
+font-size: 17.14px;
+}
+p{
+font-size: 11.42px;
+}
+ul li{
+    font-size: 11.42px;
+}
+code{
+    font-size: 11.42px;
+}
+}
+
+
+   
+
+              h2 {
+                  color: #555;
+              }
+
+              p {
+                  color: #666;
+              }
+
+              code {
+                  font-family: "Courier New", monospace;
+                  background-color: #f5f5f5;
+                  padding: 2px 4px;
+                  border-radius: 4px;
+              }
+
+              pre {
+                  background-color: #f5f5f5;
+                  padding: 10px;
+                  overflow-x: auto;
+              }
+
+              pre code {
+                  display: block;
+              }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Отключение режима сна в беспроводных наушниках при помощи циклического
+        воспроизведения бесшумного звука:
+      </h1>
+
+      <h2>Шаг 1: Загрузка необходимых файлов</h2>
+
+      <p>
+        Первым шагом является загрузка трех файлов: <code>script.ps1</code>,
+        <code>WindowsDing.wav</code>, и <code>ding.ps1</code>. Вы можете скачать
+        их, перейдя по ссылке в описании.
+      </p>
+
+      <a
+        href="https://drive.google.com/drive/folders/15eGqzkPHl_K8syngvFLjLP91FJaKUtSe?usp=sharing"
+        >Скачать файлы</a
+      >
+
+      <h2>Шаг 2: Размещение файлов в системных папках</h2>
+
+      <ul>
+        <li>
+          Скопируйте файлы <code>script.ps1</code> и <code>ding.ps1</code> в
+          папку <code>C:\Windows</code>.
+        </li>
+        <li>
+          Поместите файл <code>WindowsDing.wav</code> в папку
+          <code>C:\Windows\Media</code>. Обратите внимание, что для этого вам
+          может потребоваться предоставить права на запись в указанную папку.
+        </li>
+      </ul>
+
+      <h2>
+        Шаг 3: Запуск скрипта для выдачи прав администратора на папку
+        C:\Windows\Media
+      </h2>
+
+      <p>
+        Для этого откройте приложение WindowsPowerShell от имени администратора
+        и введите следующие команды:
+      </p>
+
+      <pre><code>Set-ExecutionPolicy RemoteSigned
+cd C:\Windows\
+.\ding.ps1</code></pre>
+
+      <p>
+        Теперь скопируйте файл <code>WindowsDing.wav</code> в папку
+        <code>C:\Windows\Media</code>.
+      </p>
+
+      <h2>Шаг 4: Скрытое выполнение файла</h2>
+
+      <p>
+        Для этого открываем приложение WindowsPowerShell от имени администратора
+        и вводим следующие команды:
+      </p>
+
+      <pre><code>Set-ExecutionPolicy RemoteSigned
+# Введите латинскую букву A и нажмите Enter
+$scriptPath = "C:\Windows\script.ps1"
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-WindowStyle Hidden -File $scriptPath"
+$trigger = New-ScheduledTaskTrigger -AtLogOn
+$taskName = "MyHiddenScriptTask"
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName $taskName -User "NT AUTHORITY\SYSTEM"</code></pre>
+
+      <p>
+        Эти команды создадут задачу, которая будет запускать скрипт скрыто при
+        входе в систему, предотвращая мешающее воздействие на вашу работу за
+        компьютером.
+      </p>
+
+      <p>
+        <em>Примечание:</em> Если вашим наушникам требуется другое время для
+        перехода в режим сна, отредактируйте файл
+        <code>C:\Windows\script.ps1</code>, изменяя значение
+        <code>Start-Sleep -Seconds 850</code> на нужное количество секунд.
+      </p>
+    </div>
+  </body>
+</html>
