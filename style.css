@@ -71,4 +71,7 @@ ul {
   .donate {
     line-height: 25px;
   }
+  ul{
+    font-size: 12.3px;
+  }
 }
