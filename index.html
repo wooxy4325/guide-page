@@ -56,75 +56,70 @@
 
   <body>
     <div class="container">
-      <h1>
-        Отключение режима сна в беспроводных наушниках при помощи циклического
-        воспроизведения бесшумного звука:
-      </h1>
+      <h1>Как отключить режим сна в беспроводных наушниках:</h1>
+      <div class="steps">
+        <h2>Шаг 1: Загрузка необходимых файлов</h2>
 
-      <h2>Шаг 1: Загрузка необходимых файлов</h2>
+        <p>
+          Первым шагом является загрузка трех файлов: script.ps1,
+          WindowsDing.wav, и ding.ps1. Вы можете скачать их, перейдя по ссылке в
+          описании.
+        </p>
 
-      <p>
-        Первым шагом является загрузка трех файлов: <code>script.ps1</code>,
-        <code>WindowsDing.wav</code>, и <code>ding.ps1</code>. Вы можете скачать
-        их, перейдя по ссылке в описании.
-      </p>
+        <a href="https://drive.google.com/drive/folders/1QoC_amgsCe2VVU5QF_C1lJSHHQrowquf?usp=sharing">Скачать файлы</a>
 
-      <a
-        href="https://drive.google.com/drive/folders/15eGqzkPHl_K8syngvFLjLP91FJaKUtSe?usp=sharing"
-        >Скачать файлы</a
-      >
+        <h2>Шаг 2: Размещение файлов в системных папках</h2>
 
-      <h2>Шаг 2: Размещение файлов в системных папках</h2>
+        <ul>
+          <li>Скопируйте файлы script.ps1 и ding.ps1 в папку C:\Windows.</li>
+          <li>
+            Поместите файл WindowsDing.wav в папку C:\Windows\Media. Обратите
+            внимание, что для этого вам может потребоваться предоставить права
+            на запись в указанную папку.
+          </li>
+        </ul>
 
-      <ul>
-        <li>
-          Скопируйте файлы <code>script.ps1</code> и <code>ding.ps1</code> в
-          папку <code>C:\Windows</code>.
-        </li>
-        <li>
-          Поместите файл <code>WindowsDing.wav</code> в папку
-          <code>C:\Windows\Media</code>. Обратите внимание, что для этого вам
-          может потребоваться предоставить права на запись в указанную папку.
-        </li>
-      </ul>
+        <h2>
+          Шаг 3: Запуск скрипта для выдачи прав администратора на папку
+          C:\Windows\Media
+        </h2>
 
-      <h2>
-        Шаг 3: Запуск скрипта для выдачи прав администратора на папку
-        C:\Windows\Media
-      </h2>
+        <p>
+          Для этого откройте приложение WindowsPowerShell от имени
+          администратора и введите следующие команды:
+        </p>
 
-      <p>
-        Для этого откройте приложение WindowsPowerShell от имени администратора
-        и введите следующие команды:
-      </p>
-
-      <pre><code>Set-ExecutionPolicy RemoteSigned
+        <pre>
+Set-ExecutionPolicy RemoteSigned
 cd C:\Windows\
-.\ding.ps1</code></pre>
+.\ding.ps1code></pre
+        >
 
-      <p>
-        Теперь скопируйте файл <code>WindowsDing.wav</code> в папку
-        <code>C:\Windows\Media</code>.
-      </p>
+        <p>Теперь скопируйте файл WindowsDing.wav в папку C:\Windows\Media.</p>
 
-      <h2>Шаг 4: Скрытое выполнение файла</h2>
+        <h2>Шаг 4: Скрытое выполнение файла</h2>
 
-      <p>
-        Для этого открываем приложение WindowsPowerShell от имени администратора
-        и вводим следующие команды:
-      </p>
-
-      <pre><code>Set-ExecutionPolicy RemoteSigned
-<p>Введите латинскую букву A и нажмите Enter</p>
-<p>Затем вводим следующую команду:</p>
+        <p>
+          Для этого открываем приложение WindowsPowerShell от имени
+          администратора и вводим следующие команды:
+        </p>
+        <pre>
+Set-ExecutionPolicy RemoteSigned
+  #Введите латинскую букву A и нажмите Enter
+</pre
+        >
+        <pre>
+  #Затем вводим следующую команду:
 $scriptPath = "C:\Windows\script.ps1"
 $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-WindowStyle Hidden -File $scriptPath"
 $trigger = New-ScheduledTaskTrigger -AtLogOn
 $taskName = "MyHiddenScriptTask"
-Register-ScheduledTask -Action $action -Trigger $trigger -TaskName $taskName -User "NT AUTHORITY\SYSTEM"</code></pre>
-
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName $taskName -User "NT AUTHORITY\SYSTEM"
+</pre
+        >
+      </div>
       <p>
-        Эти команды создадут задачу, которая будет запускать скрипт скрыто при
+        Эта команда создаст задачу, которая будет запускать скрипт скрыто при
         входе в систему, предотвращая мешающее воздействие на вашу работу за
         компьютером.
       </p>
@@ -135,14 +130,15 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName $taskName -Us
 
       <p>
         <em>Примечание:</em> Если вашим наушникам требуется другое время для
-        перехода в режим сна, отредактируйте файл
-        <code>C:\Windows\script.ps1</code>, с помощью блокнота, изменяя значение
-        <code>Start-Sleep -Seconds 850</code> на нужное количество секунд.
+        перехода в режим сна, отредактируйте файл C:\Windows\script.ps1, с
+        помощью блокнота, изменяя значение Start-Sleep -Seconds 300 на нужное
+        количество секунд.
       </p>
       <h2 class="donate">
-        Если вам понравился мой гайд, вы можете поддержать меня добровольным
-        пожертвованием на карту <br />
-        <span>Тинькофф: 5536 9141 2785 3020</span>. Благодарю за вашу поддержку!
+        Если вам помог мой гайд, вы можете поддержать меня добровольным
+        пожертвованием на карту
+        <span>Тинькофф: 5536 9141 2785 3020</span> <br />
+        Благодарю за вашу поддержку!
       </h2>
     </div>
   </body>
