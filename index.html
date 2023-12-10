@@ -57,7 +57,11 @@
   <body>
     <div class="container">
       <h1>Как же отключить режим сна в беспроводных наушниках?</h1>
-      <p>Теперь это легко! Механизм метода заключается в том, чтобы зациклить бесшумный звук, который не будет позволять наушникам входить в спящий режим и не будет нам мешать пользоваться компьютером.</p>
+      <p>
+        Теперь это легко! Механизм метода заключается в том, чтобы зациклить
+        бесшумный звук, который не будет позволять наушникам входить в спящий
+        режим и не будет нам мешать пользоваться компьютером.
+      </p>
       <div class="steps">
         <h2>Шаг 1: Загрузка необходимых файлов</h2>
 
@@ -67,7 +71,10 @@
           описании.
         </p>
 
-        <a href="https://drive.google.com/drive/folders/1QoC_amgsCe2VVU5QF_C1lJSHHQrowquf?usp=sharing">Скачать файлы</a>
+        <a
+          href="https://drive.google.com/drive/folders/1QoC_amgsCe2VVU5QF_C1lJSHHQrowquf?usp=sharing"
+          >Скачать файлы</a
+        >
 
         <h2>Шаг 2: Размещение файлов в системных папках</h2>
 
@@ -112,11 +119,11 @@ cd C:\Windows\
         </p>
         <pre>
 Set-ExecutionPolicy RemoteSigned
-  #Введите латинскую букву A и нажмите Enter
+#Введите латинскую букву A и нажмите Enter
 </pre
         >
         <pre>
-  #Затем вводим следующую команду:
+#Затем вводим следующую команду:
 $scriptPath = "C:\Windows\script.ps1"
 $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-WindowStyle Hidden -File $scriptPath"
 $trigger = New-ScheduledTaskTrigger -AtLogOn
@@ -125,7 +132,7 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName $taskName -Us
 </pre
         >
       </div>
-    
+
       <p>
         Перезагружаем компьютер и наслаждаемся непрерывной работой наушников!
       </p>
@@ -137,8 +144,8 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName $taskName -Us
         количество секунд.
       </p>
       <h2 class="donate">
-        Если вам помог или понравился мой гайд, вы можете поддержать меня добровольным
-        пожертвованием на карту <br>
+        Если вам помог или понравился мой гайд, вы можете поддержать меня
+        добровольным пожертвованием на карту <br />
         <span>Тинькофф: 5536 9141 2785 3020</span> <br />
         Благодарю за вашу поддержку!
       </h2>
