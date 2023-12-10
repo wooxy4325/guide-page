@@ -17,11 +17,11 @@ body {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 25px;
   margin-bottom: 25px;
 }
 h2 {
-  font-size: 19px;
+  font-size: 17px;
 }
 pre {
   white-space: pre-line;
@@ -49,21 +49,26 @@ ul {
 }
 
 .donate {
-  background-color: #ffcd33;
-  color: #313132;
+  background-color: #f8f9fa;
+  color: black;
   padding: 20px;
   border-radius: 20px;
   text-align: center;
   margin-top: 20px;
   line-height: 30px;
+  border: 1px solid #d1d3e2;
+  max-width:800px;
+  margin: 0 auto;
+  font-style: italic;
+  font-weight: 500;
 }
 
 @media (max-width: 550px) {
   h1 {
-    font-size: 18.46px;
+    font-size: 19.2px;
   }
   h2 {
-    font-size: 14.61px;
+    font-size: 13.07px;
   }
   p {
     font-size: 12.3px;
@@ -73,5 +78,8 @@ ul {
   }
   ul{
     font-size: 12.3px;
+  }
+  a{
+    font-size: 13.07px;
   }
 }
